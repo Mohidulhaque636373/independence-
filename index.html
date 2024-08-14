@@ -56,6 +56,7 @@
     <style>
         body {
             overflow: hidden; /* Prevent scrolling due to animations */
+            background-color: #f0f8ff; /* Light blue background */
         }
         .independence-day-text {
             color: green;
@@ -139,6 +140,32 @@
                 opacity: 1;
             }
         }
+
+        /* Audio Player Styling */
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-radius: 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10; /* Ensure it stays above other content */
+        }
+        .audio-player button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+            margin-right: 10px;
+        }
+        .audio-player button:hover {
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -155,13 +182,17 @@
     <!-- Bomb Element -->
     <div class="bomb"></div>
 
-    <!-- Hidden Audio Player -->
-    <audio autoplay loop>
-        <source src="audio.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <!-- Audio Player with Play Button -->
+    <div class="audio-player">
+        <button onclick="document.getElementById('audio').play()">▶️ Play Music</button>
+        <audio id="audio">
+            <source src="audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
 </body>
 </html>
+
 
 
     // 
